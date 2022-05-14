@@ -1,9 +1,9 @@
 # **Table of Contents**
 
-   * [Sells Module](#Sells Module)
+   * [Sells Module](#SellsModule)
    * [Usage](#usage)
    * [Description](#Description)
-   * [DataBase Diagram](#DataBase Diagram)
+   * [DataBase Diagram](#DataBaseDiagram)
 
 
 # Sells Module
@@ -30,4 +30,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in purus lectus. 
 Phasellus pharetra urna eu quam finibus, ac bibendum sem euismod. Donec ac ante diam. Aenean vitae nibh augue. Pellentesque blandit turpis ac urna maximus, vel mattis diam interdum. Duis pellentesque accumsan vulputate. Vestibulum dictum lectus purus, id imperdiet metus molestie sed. Fusce lobortis enim id convallis auctor. Nulla malesuada erat ut volutpat faucibus. Donec at risus ex. Duis euismod orci ac ante consequat gravida. In hac habitasse platea dictumst. Nunc nec leo in dolor vestibulum gravida. Sed vitae malesuada lectus. Vestibulum interdum dolor vulputate felis pharetra vestibulum. Donec luctus quam ac justo tincidunt sagittis.
 
 # DataBase Diagram
-![](https://raw.githubusercontent.com/CarlxsMG/proyectoClase/main/BaseDeDatos.drawio.png?token=GHSAT0AAAAAABUR4K5EKEGBPVI3A3AJUCEYYT7QINQ)
+![](https://raw.githubusercontent.com/CarlxsMG/proyectoClase/main/BaseDeDatos.drawio.png)
