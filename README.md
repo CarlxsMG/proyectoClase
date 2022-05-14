@@ -25,9 +25,37 @@
 >In this web application, only the buyer, seller and users of the accounting department of the company will enter. Each user should have their own panel, and be able to see how their commercial agreements are being managed.
 
 # Usage
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in purus lectus. Morbi et lorem id urna consequat dictum. Nunc volutpat libero quis varius ultricies. Sed posuere diam mauris, eget molestie urna bibendum nec. Nunc ac semper sapien. Ut in dolor nec dolor eleifend placerat. Etiam tempor mi eget pulvinar maximus. Nunc lorem nisl, venenatis sed convallis vel, facilisis sed ante. Aenean non vestibulum tellus, rhoncus fermentum erat. Aenean semper eget elit eget pharetra.
+- DataBase Steps (PSQL)
+   - Create database
+      - Command: CREATE DATABASE <name-of-database>;
+   - Create user
+      - Command: CREATE USER <name-of-user>;
+   - Set password to user
+      - Command: ALTER USER <name-of-user> WITH PASSWORD '<password>';
+   - Grant privileges to database
+      - Command: GRANT ALL PRIVILEGES ON DATABASE <name-of-database> TO <name-of-user>;
 
-Phasellus pharetra urna eu quam finibus, ac bibendum sem euismod. Donec ac ante diam. Aenean vitae nibh augue. Pellentesque blandit turpis ac urna maximus, vel mattis diam interdum. Duis pellentesque accumsan vulputate. Vestibulum dictum lectus purus, id imperdiet metus molestie sed. Fusce lobortis enim id convallis auctor. Nulla malesuada erat ut volutpat faucibus. Donec at risus ex. Duis euismod orci ac ante consequat gravida. In hac habitasse platea dictumst. Nunc nec leo in dolor vestibulum gravida. Sed vitae malesuada lectus. Vestibulum interdum dolor vulputate felis pharetra vestibulum. Donec luctus quam ac justo tincidunt sagittis.
+- Backend Steps
+   - Turn on the virtual environment
+   - Create the migrations
+      - Command: python manage.py makemigrations
+   - Apply the migrations to data base
+      - Command: python manage.py migrate
+   - Start Server
+      - Command: python manage.py runserver
+
+- Frontend Steps
+   - Install Yarn with NPM
+      - npm install yarn
+   - Install modules to run proyect
+      - Yarn install
+   - Start server
+      - Dev: Yarn dev
+      - Prod: Yarn doit (custom command created in package.json)
 
 # DataBase Diagram
+### Legend
+- Empty arrow = Inheritance
+- Filled arrow = Relationship
+
 ![](https://github.com/CarlxsMG/proyectoClase/blob/main/BaseDeDatos.drawio.png)
