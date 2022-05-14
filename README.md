@@ -27,13 +27,13 @@
 # Usage
 - DataBase Steps (PSQL)
    - Create database
-      - Command: CREATE DATABASE <name-of-database>;
+      - Command: CREATE DATABASE name-of-database;
    - Create user
-      - Command: CREATE USER <name-of-user>;
+      - Command: CREATE USER name-of-user;
    - Set password to user
-      - Command: ALTER USER <name-of-user> WITH PASSWORD '<password>';
+      - Command: ALTER USER name-of-user WITH PASSWORD 'password';
    - Grant privileges to database
-      - Command: GRANT ALL PRIVILEGES ON DATABASE <name-of-database> TO <name-of-user>;
+      - Command: GRANT ALL PRIVILEGES ON DATABASE name-of-database TO name-of-user;
 
 - Backend Steps
    - Turn on the virtual environment
