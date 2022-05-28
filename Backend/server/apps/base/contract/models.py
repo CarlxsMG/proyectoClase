@@ -23,7 +23,7 @@ class Contract(models.Model):
 
     code = models.CharField(max_length=20)
     status = models.CharField(max_length=1, choices=_STATS)
-    fee = models.IntegerField(max_length=2, default=2)
+    fee = models.SmallIntegerField(default=2)
 
     seller = models.ForeignKey(SellerUser, on_delete=models.DO_NOTHING)
     buyer = models.ForeignKey(BuyerUser, on_delete=models.DO_NOTHING)
