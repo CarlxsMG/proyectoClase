@@ -20,6 +20,17 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
+BASE_APPS = tuple(
+    map( lambda x: 'apps.base.' + x, 
+        (
+            'contract',
+            'payment',
+            'user',
+            'vehiclea',
+        )
+    )
+)
+
 THIRD_PARTY_APPS = (
     'corsheaders',
     'rest_framework',
