@@ -11,15 +11,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Application definition
-INSTALLED_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+)
 
+THIRD_PARTY_APPS = (
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    "django_filters",
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
 
 # Middleware scripts
 MIDDLEWARE = [
