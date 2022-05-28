@@ -6,10 +6,10 @@ from apps.base.user.models import BuyerUser, ManagementUser, SellerUser
 from apps.base.vehicle.models import Vehicle
 
 
-# Create your models here.
+# Models.
 class Contract(models.Model):
     """
-    Class to define customs Vehicles
+    Class to define customs Contracts
 
     Inheritances:
         Model ([model]): Model class provided by django
@@ -21,11 +21,11 @@ class Contract(models.Model):
         ('R', 'Rejected')
     ]
 
-    code = models.CharField(max_length=20)
-    status = models.CharField(max_length=1, choices=_STATS)
-    fee = models.SmallIntegerField(default=2)
+    code = models.CharField(max_length=20, verbose_name='Code identifier')
+    status = models.CharField(max_length=1, choices=_STATS, verbose_name='Status of contract')
+    fee = models.SmallIntegerField(default=2, verbose_name='Fee of management')
 
-    seller = models.ForeignKey(SellerUser, on_delete=models.DO_NOTHING)
-    buyer = models.ForeignKey(BuyerUser, on_delete=models.DO_NOTHING)
-    vehicle = models.ForeignKey(Vehicle, on_delete=models.DO_NOTHING)
-    manager = models.ForeignKey(ManagementUser, on_delete=models.DO_NOTHING)
+    seller = models.ForeignKey(SellerUser, on_delete=models.DO_NOTHING, verbose_name='Seller of vehicle')
+    buyer = models.ForeignKey(BuyerUser, on_delete=models.DO_NOTHING, verbose_name='Buyer of vehicle')
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.DO_NOTHING, verbose_name='Product to sell')
+    manager = models.ForeignKey(ManagementUser, on_delete=models.DO_NOTHING, verbose_name='Manager')
