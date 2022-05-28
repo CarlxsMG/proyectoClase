@@ -15,7 +15,11 @@ ALLOWED_HOSTS = ['*']
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'project_db',
+        'USER': 'the_project',
+        'PASSWORD': 'project01',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
