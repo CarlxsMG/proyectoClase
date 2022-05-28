@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import SellerUser, BuyerUser, ManagementUser
 from .serializers import SellerSerializer, BuyerSerializer, ManagementSerializer
 
+
 # Viewsets
 class SellerViewSet(viewsets.ModelViewSet):
     queryset = SellerUser.objects.all()

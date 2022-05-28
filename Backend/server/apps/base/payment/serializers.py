@@ -1,6 +1,5 @@
 #  Third party imports
-from rest_framework import serializers
-from rest_framework.serializers import ModelSerializer, Serializer
+from rest_framework.serializers import ModelSerializer
 
 # Local imports 
 from .models import Payment

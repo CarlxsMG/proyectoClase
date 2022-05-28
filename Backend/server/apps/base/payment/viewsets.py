@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import Payment
 from .serializers import PaymentSerializer
 
+
 # Viewsets
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()

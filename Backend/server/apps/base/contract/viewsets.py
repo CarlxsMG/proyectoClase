@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import Contract
 from .serializers import ContractSerializer
 
+
 # Viewsets
 class ContractViewSet(viewsets.ModelViewSet):
     queryset = Contract.objects.all()

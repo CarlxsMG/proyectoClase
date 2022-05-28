@@ -7,6 +7,7 @@ from rest_framework.routers import DefaultRouter
 # Local imports
 from .viewsets import PaymentViewSet
 
+
 # Creation of the router and register the viewsets
 router = DefaultRouter()
 router.register(r'', PaymentViewSet, basename='payment-viewset')
