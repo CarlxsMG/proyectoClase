@@ -1,7 +1,10 @@
+# Django imports
 from django.db import models
 
-from Backend.server.apps.base.user.models import BuyerUser, ManagementUser, SellerUser
-from Backend.server.apps.base.vehicle.models import Vehicle
+# Local imports
+from apps.base.user.models import BuyerUser, ManagementUser, SellerUser
+from apps.base.vehicle.models import Vehicle
+
 
 # Create your models here.
 class Contract(models.Model):
