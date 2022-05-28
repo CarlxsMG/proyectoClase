@@ -2,6 +2,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+# Local imports
+from apps.base.contract.models import Contract
+from apps.base.vehicle.models import Vehicle
+
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -21,7 +25,7 @@ class CustomUser(AbstractUser):
     class Meta:
         abstract = True
 
-        
+
 class SellerUser(CustomUser):
     """
     Class to define Sellers
@@ -30,8 +34,8 @@ class SellerUser(CustomUser):
         CustomUser ([model]): Custom User class defined
     """
 
-    # vehicle = models.ForeignKey(Vehicle, null=True, blank=True)
-    # contract = models.ForeignKey(Contract, null=True, blank=True)
+    vehicle = models.ForeignKey(Vehicle, null=True, blank=True)
+    contract = models.ForeignKey(Contract, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Seller'
@@ -45,7 +49,7 @@ class BuyerUser(CustomUser):
         CustomUser ([model]): Custom User class defined
     """
 
-    # contract = models.ForeignKey(Contract, null=True, blank=True)
+    contract = models.ForeignKey(Contract, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Buyer'
