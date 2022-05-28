@@ -22,5 +22,6 @@ urlpatterns = [
     # Base models urls
     path('', include('apps.base.user.urls')),
     path('', include('apps.base.vehicle.urls')),
-    path('', include('apps.base.contract.urls'))
+    path('', include('apps.base.contract.urls')),
+    path('', include('apps.base.payment.urls'))
 ]
