@@ -20,5 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Base models urls
-    path('', include('apps.base.user.urls'))
+    path('', include('apps.base.user.urls')),
+    path('', include('apps.base.vehicle.urls')),
+    path('', include('apps.base.contract.urls'))
 ]
