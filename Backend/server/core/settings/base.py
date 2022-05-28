@@ -26,7 +26,7 @@ BASE_APPS = tuple(
             'contract',
             'payment',
             'user',
-            'vehiclea',
+            'vehicle',
         )
     )
 )
@@ -38,7 +38,7 @@ THIRD_PARTY_APPS = (
     "django_filters",
 )
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + BASE_APPS + THIRD_PARTY_APPS
 
 # Middleware scripts
 MIDDLEWARE = [
