@@ -54,13 +54,7 @@ class ManagementAdmin(UserAdmin):
     list_display = ('id', 'email', 'is_active',)
     list_display_links = ('id', 'email',)
     list_filter = ('is_staff', 'is_active',)
-    search_fields = ['id', 'email',]
-
-    def get_readonly_fields(self, request, obj=None):
-        if obj: # editing an existing object
-            return self.readonly_fields + ('email',)
-        return self.readonly_fields
-    
+    search_fields = ['id', 'email',]    
 
 admin.site.register(SellerUser, SellerAdmin)
 admin.site.register(BuyerUser, BuyerAdmin)
