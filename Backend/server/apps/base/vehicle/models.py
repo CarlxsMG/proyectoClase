@@ -4,6 +4,7 @@ from django.db import models
 # Django imports
 from apps.base.user.models import SellerUser
 
+
 # Create your models here.
 class Vehicle(models.Model):
     """
