@@ -1,0 +1,25 @@
+{
+    "name": "front-truckers",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build ",
+        "generate": "nuxt generate",
+        "start": "nuxt start",
+        "go": "nuxt build && nuxt start"
+    },
+    "dependencies": {
+        "@nuxtjs/axios": "^5.13.6",
+        "cookie": "^0.4.1",
+        "js-cookie": "^3.0.1",
+        "nuxt": "^2.15.8",
+        "v-calendar": "^2.4.1"
+    },
+    "devDependencies": {
+        "@fortawesome/free-brands-svg-icons": "^5.15.4",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@nuxtjs/tailwindcss": "^4.2.1",
+        "sass": "^1.45.0",
+        "sass-loader": "10.1.1"
+    }
+}
