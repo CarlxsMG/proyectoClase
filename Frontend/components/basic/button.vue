@@ -20,6 +20,7 @@ export default {
         box-shadow: 1px 1px 5px #ccc
         height: fit-content
         width: fit-content
+        cursor: pointer
 
         @media screen and (max-width: 768px) 
             font-size: .6rem
