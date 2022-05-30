@@ -1,14 +1,5 @@
 <template>
   <article class="main">
-      <section style="display: grid; background: #00000099;">
-          <div class="main-vehicles">
-                <cards-vehicles class="main-vehicles-item" v-for="item in 6" :key="item" />
-          </div>
-          <basic-link class="main-more"
-            :text="'Ver más'"
-            :href="'/vehicle'"
-          />
-      </section>
       <section class="main-about">
           <hgroup class="main-about-title">
               <h1>Truckers.</h1>
@@ -70,8 +61,7 @@ export default {
             box-shadow: 0 0 10px #ccc
 
         &-about
-            padding: 2rem
-            margin: 3rem
+            padding: 5rem
             background: #00000099
             display: grid
             grid-template-rows: auto
