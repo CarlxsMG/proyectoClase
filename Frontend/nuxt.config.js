@@ -46,12 +46,6 @@ export default {
     '@nuxtjs/axios',
   ],
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // Tailwind module
-    '@nuxtjs/tailwindcss'
-  ],
-
   server: {
     host: process.env.NUXT_HOST || 'localhost',
     port: process.env.NODE_ENV === 'production' ? 4000 : 80,
