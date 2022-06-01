@@ -33,6 +33,7 @@ export default {
         display: grid
         grid-template-columns: repeat(3, 1fr)
         padding: 1rem 2rem
+        max-width: calc( 100vw - 4rem )
         width: 100vw
         height: 100%
         height: fit-content

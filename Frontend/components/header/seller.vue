@@ -3,24 +3,27 @@
       <section>
             <basic-button
                 :type="'menu'"
-                :text="'>'"
+                :text="openNav ? 'X' : '>'"
+                @click.native="openNav = !openNav"
             />
             <picture>
                 <img src="/img/logo.png" alt="logo" width="80" height="40">
             </picture>
-            <basic-button 
-                class="login"
-                :type="'button'"
-                :text="'Entrar | Registrarme'"
+            <nav-seller
+                class="nav"
+                :class="{'close': !openNav}"
             />
-            <nav-seller />
       </section>
   </header>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            openNav: true
+        }
+    }
 }
 </script>
 
@@ -51,14 +54,13 @@ export default {
         grid-column: 2 / 3
         justify-self: center
 
-        @media screen and (max-width: 768px) 
-            grid-column: 1 / 2
 
+    .nav
+        margin-left: 0
+        transition: margin-left 1s 
 
-    .login
-        grid-column: 3 / -1
-        justify-self: flex-end
-        align-self: center
+    .close
+        margin-left: -100%
 
             
 </style>

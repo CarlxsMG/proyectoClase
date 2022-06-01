@@ -41,4 +41,5 @@ export default {
             li
                 padding: .5rem 1rem
                 border-bottom: 1px solid #ccc
+                padding-top: 1.5rem
 </style>
