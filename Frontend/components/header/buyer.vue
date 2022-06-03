@@ -15,7 +15,7 @@
                 :type="'button'"
                 :text="'Salir'"
             />
-            <nav-seller
+            <nav-buyer
                 class="nav"
                 :class="{'close': !openNav}"
             />
@@ -75,6 +75,5 @@ export default {
 
     .open-close
         align-self: center
-
             
 </style>

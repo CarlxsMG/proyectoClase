@@ -28,15 +28,16 @@ export default {
         max-height: 74px
         height: 74px
         min-height: 74px
+        z-index: 10
+
 
     section
         display: grid
         grid-template-columns: repeat(3, 1fr)
         padding: 1rem 2rem
         max-width: calc( 100vw - 4rem )
-        width: 100vw
-        height: 100%
-        height: fit-content
+        width: calc( 100vw - 4rem )
+        height: -webkit-fill-available
         box-shadow: 0px 0px 5px #333
 
     picture

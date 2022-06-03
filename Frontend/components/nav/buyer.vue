@@ -1,10 +1,9 @@
 <template>
   <nav>
-      <p>Panel vendedores.</p>
+      <p>Panel compradores.</p>
       <ul>
           <li>Mi Panel</li>
-          <li>Vehiculos</li>
-          <li>Peticiones</li>
+          <li>Propuestas</li>
           <li>Contratos</li>
           <li>Pagos</li>
       </ul>
