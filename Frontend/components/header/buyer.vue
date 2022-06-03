@@ -14,7 +14,7 @@
                 :type="'button'"
                 :text="'Salir'"
             />
-            <nav-seller
+            <nav-buyer
                 class="nav"
                 :class="{'close': !openNav}"
             />
