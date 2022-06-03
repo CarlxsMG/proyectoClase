@@ -24,7 +24,6 @@ export default {
 
 <style lang="sass" scoped>
     .main
-        margin-top: 74px
         background: url('static/img/main.jpg')no-repeat
         min-height: calc(100vh - 74px)
 
