@@ -1,23 +1,41 @@
 <template>
   <section>
-      <picture>
-          <img src="/img/trucks/red.jpg" alt="truck">
-      </picture>
-      <article>
-          <p class="brand">Marca Modelo</p>
-          <p class="price">50000$</p>
-      </article>
+      <template v-if="item.branch">
+            <picture>
+                <img :src="item.image" alt="truck">
+            </picture>
+            <article>
+                <p class="brand">{{item.branch}} {{item.model}}</p>
+                <p class="price">{{item.price}}$</p>
+            </article>
+      </template>
+      <template v-else>
+          <NuxtLink class="box" to="/seller/vehicle/new">
+            <picture class="noImage-pic">
+                <img src="/img/trucks/no-image.jpg" alt="truck">
+            </picture>
+            <article>
+                <p class="noImage-text">Añadir vehiculo</p>
+            </article>
+          </NuxtLink>
+      </template>
   </section>
 </template>
 
 <script>
 export default {
-
+    props: {
+        item: {
+            type: Object,
+            required: false,
+            default: () => ({})
+        }
+    }
 }
 </script>
 
 <style lang="sass" scoped>
-    section
+    .box
         max-width: 200px
         max-height: 200px
         min-width: 200px
@@ -48,6 +66,15 @@ export default {
         align-self: flex-end
         color: #eee
         font-weight: bold
+
+    .noImage
+        &-pic img
+            width: 100%
+
+        &-text
+            align-self: center
+            color: #fff
+            font-weight: bold
 
     
             
