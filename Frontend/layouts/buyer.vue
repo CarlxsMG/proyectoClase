@@ -1,5 +1,9 @@
 <template>
-  
+  <main>
+    <HeaderBuyer />
+    <Nuxt />
+    <Footer />
+  </main>
 </template>
 
 <script>
