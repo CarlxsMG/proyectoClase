@@ -2,6 +2,7 @@
   <header>
       <section>
             <basic-button
+                class="open-close"
                 :type="'menu'"
                 :text="openNav ? 'X' : '>'"
                 @click.native="openNav = !openNav"
@@ -70,6 +71,9 @@ export default {
 
     .exit
         justify-self: flex-end
+        align-self: center
+
+    .open-close
         align-self: center
 
             

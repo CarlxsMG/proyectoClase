@@ -3,7 +3,7 @@
       <p>Panel compradores.</p>
       <ul>
           <li>Mi Panel</li>
-          <li>Trade</li>
+          <li>Propuestas</li>
           <li>Contratos</li>
           <li>Pagos</li>
       </ul>
