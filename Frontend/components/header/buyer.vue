@@ -4,8 +4,8 @@
             <basic-button
                 class="open-close"
                 :type="'menu'"
-                :text="openNav ? 'X' : '>'"
-                @click.native="openNav = !openNav"
+                :text="!closeNav ? 'X' : '>'"
+                @click.native="closeNav = !closeNav"
             />
             <picture>
                 <img src="/img/logo.png" alt="logo" width="80" height="40">
@@ -17,7 +17,7 @@
             />
             <nav-buyer
                 class="nav"
-                :class="{'close': !openNav}"
+                :class="{'open': !closeNav}"
             />
       </section>
   </header>
@@ -27,7 +27,7 @@
 export default {
     data() {
         return {
-            openNav: true
+            closeNav: true
         }
     }
 }
@@ -63,11 +63,11 @@ export default {
 
 
     .nav
-        margin-left: 0
+        margin-left: -100%
         transition: margin-left 1s 
 
-    .close
-        margin-left: -100%
+    .open
+        margin-left: 0
 
     .exit
         justify-self: flex-end

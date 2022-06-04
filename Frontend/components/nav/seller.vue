@@ -2,11 +2,31 @@
   <nav>
       <p>Panel vendedores.</p>
       <ul>
-          <li>Mi Panel</li>
-          <li>Vehiculos</li>
-          <li>Peticiones</li>
-          <li>Contratos</li>
-          <li>Pagos</li>
+        <li>
+            <NuxtLink to="/seller">
+              Mi Panel
+            </NuxtLink>
+        </li>
+        <li>
+            <NuxtLink to="/seller/vehicle">
+              Vehiculos
+            </NuxtLink>
+        </li>
+        <li>
+            <NuxtLink to="/seller/trade">
+              Peticiones
+            </NuxtLink>
+        </li>
+        <li>
+            <NuxtLink to="/seller/contract">
+              Contratos
+            </NuxtLink>
+        </li>
+        <li>
+            <NuxtLink to="/seller/payment">
+              Pagos
+            </NuxtLink>
+        </li>
       </ul>
   </nav>
 </template>
