@@ -2,10 +2,26 @@
   <nav>
       <p>Panel compradores.</p>
       <ul>
-          <li>Mi Panel</li>
-          <li>Propuestas</li>
-          <li>Contratos</li>
-          <li>Pagos</li>
+          <li>
+            <NuxtLink to="/buyer">
+              Mi Panel
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/buyer/trade">
+              Propuestas
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/buyer/contract">
+              Contratos
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/buyer/payment">
+              Pagos
+            </NuxtLink>
+          </li>
       </ul>
   </nav>
 </template>
