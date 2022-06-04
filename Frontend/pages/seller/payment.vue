@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    layout: 'buyer',
+    layout: 'seller',
     data() {
         return {
             payments: [1,2,3,4,5]

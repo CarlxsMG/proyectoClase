@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    layout: 'seller',
+    layout: 'buyer',
     data() {
         return {
             trades: [1,2,3,4,5]
