@@ -45,6 +45,7 @@ export default {
         if(this.$route.params.id != 'new') {
             const req = await this.$axios.get(`vehicle/${this.$route.params.id}`)
             this.result = req.data
+
         }
     },
     data() {
@@ -61,7 +62,10 @@ export default {
                 const formData = new FormData(form)
     
                 const res = await this.$axios.put(`vehicle/${this.$route.params.id}/`, formData)
-                console.log(res)
+                
+                if(res.status == 200) {
+                    this.$router.push('/seller/vehicle')
+                }
             }
         }
     }
