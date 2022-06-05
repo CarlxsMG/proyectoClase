@@ -1,9 +1,9 @@
 <template>
   <form class="form" id="form-vehicle" @submit.prevent="editOrCreate">
     <section class="form-sect">
-        <label class="form-sect-label" style="font-weight: bold;" for="image">Imagen: <br>
-        <input class="form-sect-input" type="file" name="image" id="image" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
-        <img class="form-sect-pic" id="pic" />
+        <label class="form-sect-label" style="font-weight: bold;" for="picture">Imagen: <br>
+        <input class="form-sect-input" type="text" name="picture" id="picture" :value="result.picture || ''">
+        <img class="form-sect-pic" :src="result.picture || '/img/trucks/no-image.jpg'" id="pic" />
         </label>
     </section>
       
@@ -50,6 +50,7 @@ export default {
     },
     data() {
         let user = this.$store.state.auth.user.user_id
+        
         return {
             result: {},
             user: user
@@ -64,6 +65,16 @@ export default {
                 const res = await this.$axios.put(`vehicle/${this.$route.params.id}/`, formData)
                 
                 if(res.status == 200) {
+                    this.$router.push('/seller/vehicle')
+                }
+            }
+            else {
+                const form = document.querySelector('#form-vehicle')
+                const formData = new FormData(form)
+    
+                const res = await this.$axios.post(`vehicle/`, formData)
+                
+                if(res.status == 201) {
                     this.$router.push('/seller/vehicle')
                 }
             }
@@ -88,7 +99,11 @@ export default {
                 font-weight: bold
 
             &-input
-                display: none
+                padding: .5rem
+                border: 1px solid #ccc
+                border-radius: 4px
+                margin-bottom: .5rem
+                width: 90%
 
             &-pic
                 min-width: 250px
@@ -110,12 +125,14 @@ export default {
                     padding: .5rem
                     border: 1px solid #ccc
                     border-radius: 4px
+                    width: 90%
                 
                 textarea
                     padding: .5rem
                     border: 1px solid #ccc
                     border-radius: 4px
-
+                    width: 90%
+                    height: 10rem
         &-submit
             margin: 1rem
 </style>

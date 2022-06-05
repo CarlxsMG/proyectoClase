@@ -12,6 +12,9 @@
                 :id="vehicle.id"
               />
           </li>
+          <li class="vehicle-list-item">
+              <cards-vehicles />
+          </li>
       </ul>
   </main>
 </template>
@@ -51,6 +54,7 @@ export default {
 
         &-list
             display: grid
+            gap: 1rem
             justify-content: center
 
             &-item
