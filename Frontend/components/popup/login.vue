@@ -52,14 +52,11 @@ export default {
           else {
             this.$router.push('/buyer')
           }
-
-          // this.$store.commit('popup/open', false)
           
         }
       }
       catch(e) {
-        console.log(e)
-        // this.$router.push('/')
+        this.$router.push('/')
       }
       
     },
