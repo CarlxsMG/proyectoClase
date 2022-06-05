@@ -39,13 +39,16 @@ export default {
         }
     },
     async beforeMount() {
-        const res = await this.$axios.get(`vehicle/${this.id}`)
-        let item = res.data
+        if(this.id) {
+            const res = await this.$axios.get(`vehicle/${this.id}`)
+            let item = res.data
 
-        const user=this.$store.state.auth.type
+            const user=this.$store.state.auth.type
 
-        this.user_type = user
-        this.item = item
+            this.user_type = user
+            this.item = item
+        }
+        
     }
 }
 </script>

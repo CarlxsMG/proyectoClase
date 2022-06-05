@@ -1,11 +1,20 @@
 <template>
   <section class="box">
-      <cards-vehicles class="box-card" />
+      <cards-vehicles :id="contract.vehicle" class="box-card" />
       <section class="box-card-user" >
-          <span>Nombre: {{user.name}}</span>
-          <span>Teléfono: {{user.phone}}</span>
-          <span>Email: {{user.email}}</span>
-          <span>DNI: {{user.dni}}</span>
+          <template v-if="contract.buyer.first_name">
+            <span>Nombre: {{contract.buyer.first_name}}</span>
+            <span>Teléfono: {{contract.buyer.phone}}</span>
+            <span>Email: {{contract.buyer.email}}</span>
+            <span>DNI: {{contract.buyer.doc_identifier}}</span>
+          </template>
+          <template v-else>
+            <span>Nombre: {{contract.seller.first_name}}</span>
+            <span>Teléfono: {{contract.seller.phone}}</span>
+            <span>Email: {{contract.seller.email}}</span>
+            <span>DNI: {{contract.seller.doc_identifier}}</span>
+          </template>
+          
       </section>
       <section class="box-card-status" >
           <span v-if="status == 'P'">No pagado</span>
@@ -16,17 +25,13 @@
 
 <script>
 export default {
-    data() {
-        return {
-            status: 'P',
-            user: {
-                name: 'Juan',
-                phone: '674832609',
-                email: 'carlosmartiguerre@gmail.com',
-                dni: '23887095P'
-            }
+    props: {
+        contract: {
+            type: Object,
+            required: false,
+            default: () => ({})
         }
-    }
+    },
 }
 </script>
 
