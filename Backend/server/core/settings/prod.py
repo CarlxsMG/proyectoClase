@@ -12,6 +12,10 @@ DEBUG = True
 
 # Allowed host who can make request
 ALLOWED_HOSTS = ['proyecto-clase-b.herokuapp.com', '*']
+CORS_ORIGIN_ALLOW_ALL = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = ['http://localhost','https://proyecto-clase-f.herokuapp.com/',]
+CSRF_COOKIE_SECURE = False
 
 
 # Database

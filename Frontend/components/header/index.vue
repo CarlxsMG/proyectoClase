@@ -4,10 +4,11 @@
           <picture>
               <img src="/img/logo.png" alt="logo" width="80" height="40">
           </picture>
-          <basic-button 
+          <basic-button
+            @click.native="openPopup"
             class="login"
             :type="'button'"
-            :text="'Entrar | Registrarme'"
+            :text="'Entrar'"
           />
       </section>
   </header>
@@ -15,7 +16,11 @@
 
 <script>
 export default {
-
+    methods: {
+        openPopup() {
+            this.$store.commit('popup/open', !this.$store.state.popup.open)
+        }
+    }
 }
 </script>
 

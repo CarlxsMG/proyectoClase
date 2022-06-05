@@ -26,5 +26,5 @@ class ManagementSerializer(ModelSerializer):
         exclude = ['password', 'is_superuser', 'is_staff']
 
 class LoginSerializer(Serializer):
-    email = serializers.EmailField()
+    username = serializers.CharField()
     password = serializers.CharField(max_length=128)

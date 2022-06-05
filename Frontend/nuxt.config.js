@@ -23,7 +23,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // URL to backend APIs
-    baseURL: ''
+    baseURL: 'https://proyecto-clase-b.herokuapp.com/api'
   },
 
   // Static config
