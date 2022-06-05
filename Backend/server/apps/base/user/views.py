@@ -37,6 +37,7 @@ def user_login(request, user_type):
                 raise 
             
             data['email'] = user.email
+            data['username'] = user.username
             data['user_id'] = user.id
         except Exception as e:
             raise 
@@ -57,10 +58,10 @@ def user_login(request, user_type):
         data = serializer.errors   
         return Response(data, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
 def user_logout(request):
 
     data = {}
-    request.user.auth_token.delete()
 
     logout(request)
 

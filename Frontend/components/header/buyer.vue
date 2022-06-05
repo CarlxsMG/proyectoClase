@@ -14,6 +14,7 @@
                 class="exit"
                 :type="'button'"
                 :text="'Salir'"
+                @click.native="logout"
             />
             <nav-buyer
                 class="nav"
@@ -28,6 +29,23 @@ export default {
     data() {
         return {
             closeNav: true
+        }
+    },
+    methods: {
+        async logout() {
+            try {
+                const {token, ...user} = this.$store.state.auth.user
+
+                let req = await this.$axios.post('logout/', {'headers': {'Authorization': token}})
+
+                if(req.status == 200) {
+                    this.$router.push('/')
+                }
+            }
+            catch(e) {
+                this.$router.push('/')
+            }
+
         }
     }
 }

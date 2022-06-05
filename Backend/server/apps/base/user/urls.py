@@ -18,5 +18,6 @@ router.register(r'manager', ManagementViewSet, basename='user-manager-viewset')
 # List of urls
 urlpatterns = [
     path('api/users/', include(router.urls), name='users-viewset'),
-    path('api/login/<str:user_type>/', user_login, name="login")
+    path('api/login/<str:user_type>/', user_login, name="login"),
+    path('api/logout/', user_logout, name="logout"),
 ]
