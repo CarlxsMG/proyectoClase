@@ -39,23 +39,27 @@ export default {
         let user = await this.$axios.post(`login/${type}/`,
           formData
         )
-        console.log(user.data)
+        
         if(user.status == 200) {
           let user_data = user.data
-          this.$store.commit('auth/user', user_data)
-          this.$store.commit('popup/open', false)
+          user_data['user_type'] = type
 
+          this.$store.commit('auth/user', user_data)
+          
           if(type == 'S') {
             this.$router.push('/seller')
           } 
           else {
             this.$router.push('/buyer')
           }
+
+          // this.$store.commit('popup/open', false)
           
         }
       }
       catch(e) {
-        this.$router.push('/')
+        console.log(e)
+        // this.$router.push('/')
       }
       
     },
