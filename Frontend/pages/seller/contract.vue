@@ -7,8 +7,11 @@
           Aún no tienes ningun contrato :(
       </p>
       <ul class="contract-list">
-          <li class="contract-list-item" v-for="contract in contracts" :key="contract">
-              <cards-contracts />
+          <li class="contract-list-item" v-for="contract in contracts" :key="contract.id">
+              <cards-contracts
+               :contract="contract"
+
+              />
           </li>
       </ul> 
   </main>
@@ -17,16 +20,27 @@
 <script>
 export default {
     layout: 'seller',
+    async asyncData({$axios, store}) {
+        const req = await $axios.get('contract')
+        const data = req.data
+        
+        const data_filtered = data.filter( el => el.seller.toString() == store.state.auth.user.user_id)
+
+        data_filtered.forEach( async function(e) {
+            let reqs = await $axios.get(`users/buyer/${e.buyer}/`)
+
+            e.buyer = reqs.data
+        })
+
+        return {
+            contracts: data_filtered
+        }
+    },
     beforeCreate() {
         const type = this.$store.state.auth.type
 
         if (!(type == 'S')) {
             this.$router.push('/')
-        }
-    },
-    data() {
-        return {
-            contracts: [1,2,3,4,5]
         }
     }
 }
