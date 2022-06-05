@@ -17,10 +17,15 @@
 <script>
 export default {
     layout: 'seller',
+    async asyncData() {
+        const req = await this.$axios.get('seller/vehicle')
+
+        console.log(req)
+    },
     beforeCreate() {
-        const user = this.$store.state.user
-        
-        if (!(user?.type == 'S')) {
+        const type = this.$store.state.auth.type
+
+        if (!(type == 'S')) {
             this.$router.push('/')
         }
     },
