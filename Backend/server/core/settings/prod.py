@@ -1,5 +1,7 @@
 # Local imports
 from .base import *
+import os
+import django_heroku
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -9,17 +11,21 @@ SECRET_KEY = 'Ax82na2D@sdA2!8454_SAss23@45aWGsa@!lksUO54as2!D95e46AF'
 DEBUG = True
 
 # Allowed host who can make request
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['proyecto-clase-b.herokuapp.com', '*']
 
 
 # Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'project_db',
-        'USER': 'the_project',
-        'PASSWORD': 'project01',
-        'HOST': '127.0.0.1',
+        'NAME': 'd2va6ls79meckr',
+        'USER': 'wawyjjkfglgbvo',
+        'PASSWORD': '8cd4a78915d07d832afa5adf6ae1215345a4f491f6a0dff7c70d527c11c5e541',
+        'HOST': 'ec2-52-212-228-71.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+django_heroku.settings(locals())
