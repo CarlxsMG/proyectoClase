@@ -3,7 +3,9 @@
       <hgroup>
           <h1>Mi perfil</h1>
       </hgroup>
-      <form-profile />
+      <form-profile
+        :type_profile="'buyer'"
+      />
   </main>
 </template>
 
