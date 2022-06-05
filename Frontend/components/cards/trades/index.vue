@@ -15,11 +15,13 @@
             class="box-buttons-reject"
             :type="'button'"
             :text="'Rechazar'"
+            @click.native="rejectTrade"
           />
           <basic-button
             class="box-buttons-accept"
             :type="'button'"
             :text="'Aceptar'"
+            @click.native="acceptTrade"
           />
       </div>
   </section>
@@ -42,7 +44,29 @@ export default {
             required: true
         }
     },
+    mounted() {
+        console.log(this.trade)
+    },
+    methods: {
+        async rejectTrade() {
+            let data = this.trade
+            data['status'] = 'R'
+            const req = await this.$axios.put(`contract/${this.trade.id}/`, data)
 
+            if(req.status == 200){
+                this.$router.push('/seller/contract')
+            }
+        },
+        async acceptTrade() {
+            let data = this.trade
+            data['status'] = 'C'
+            const req = await this.$axios.put(`contract/${this.trade.id}/`, data)
+
+            if(req.status == 200){
+                this.$router.push('/seller/contract')
+            }
+        }
+    }
 }
 </script>
 
