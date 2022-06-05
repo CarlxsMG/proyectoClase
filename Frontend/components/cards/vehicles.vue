@@ -1,13 +1,15 @@
 <template>
   <section>
-      <template v-if="item.branch">
+      <template v-if="item.brand">
+          <NuxtLink class="box" :to="user_type == 'S' ? `/seller/vehicle/${item.id}`: ''">
             <picture>
-                <img :src="item.image" alt="truck">
+                <img :src="item.picture" width="300" height="300" class="noImage-pic" alt="truck">
             </picture>
             <article>
-                <p class="brand">{{item.branch}} {{item.model}}</p>
+                <p class="brand">{{item.brand}} {{item.model}}</p>
                 <p class="price">{{item.price}}$</p>
             </article>
+          </NuxtLink>
       </template>
       <template v-else>
           <NuxtLink class="box" to="/seller/vehicle/new">
@@ -25,11 +27,25 @@
 <script>
 export default {
     props: {
-        item: {
-            type: Object,
-            required: false,
-            default: () => ({})
+        id: {
+            type: Number,
+            required: false
+        },
+    },
+    data() {
+        return{
+            item: {},
+            user_type: ''
         }
+    },
+    async beforeMount() {
+        const res = await this.$axios.get(`vehicle/${this.id}`)
+        let item = res.data
+
+        const user=this.$store.state.auth.type
+
+        this.user_type = user
+        this.item = item
     }
 }
 </script>
@@ -51,6 +67,7 @@ export default {
 
         img
             height: 100%
+            width: 100%
 
         article
             align-self: flex-end

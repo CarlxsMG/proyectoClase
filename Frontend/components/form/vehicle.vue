@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" id="form-vehicle" @submit.prevent="editOrCreate">
     <section class="form-sect">
         <label class="form-sect-label" style="font-weight: bold;" for="image">Imagen: <br>
         <input class="form-sect-input" type="file" name="image" id="image" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
@@ -10,24 +10,26 @@
       <section class="form-section">
             <label class="form-section-brand" for="brand">
                 Marca: <br>
-                <input type="text" name="brand" id="brand">
+                <input type="text" name="brand" id="brand" :value="result.brand || ''">
             </label>
             <label class="form-section-model" for="model">
                 Modelo: <br>
-                <input type="text" name="model" id="model">
+                <input type="text" name="model" id="model" :value="result.model || ''">
             </label>
             <label class="form-section-price" for="price">
                 Precio: <br>
-                <input type="number" name="price" id="price">
+                <input type="number" name="price" id="price" :value="result.price || ''">
             </label>
-            <label class="form-section-code" for="code">
+            <label class="form-section-plate" for="plate">
                 Matricula: <br>
-                <input type="text" name="code" id="code">
+                <input type="text" name="plate" id="plate" :value="result.plate || ''">
             </label>
             <label class="form-section-description" for="description">
                 Descripción: <br>
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description" :value="result.description || ''"></textarea>
             </label>
+            <input type="text" style="display:none;" name="owner" :value="user">
+            <input type="text" style="display:none;" name="status" :value="result.status || ''">
       </section>
       <basic-button 
         class="form-submit"
@@ -39,7 +41,30 @@
 
 <script>
 export default {
-
+    async beforeMount() {
+        if(this.$route.params.id != 'new') {
+            const req = await this.$axios.get(`vehicle/${this.$route.params.id}`)
+            this.result = req.data
+        }
+    },
+    data() {
+        let user = this.$store.state.auth.user.user_id
+        return {
+            result: {},
+            user: user
+        }
+    },
+    methods: {
+        async editOrCreate() {
+            if(this.$route.params.id != 'new') {
+                const form = document.querySelector('#form-vehicle')
+                const formData = new FormData(form)
+    
+                const res = await this.$axios.put(`vehicle/${this.$route.params.id}/`, formData)
+                console.log(res)
+            }
+        }
+    }
 }
 </script>
 
@@ -74,7 +99,7 @@ export default {
             gap: 1rem
             padding: 2rem 1rem
 
-            &-brand, &-model, &-price, &-code, &-description
+            &-brand, &-model, &-price, &-plate, &-description
                 font-weight: bold
 
                 input
