@@ -9,7 +9,14 @@
 
 <script>
 export default {
-    layout: 'buyer'
+    layout: 'buyer',
+    beforeCreate() {
+        const user = this.$store.state.user
+        
+        if (!(user?.type == 'B')) {
+            this.$router.push('/')
+        }
+    },
 }
 </script>
 

@@ -34,19 +34,19 @@ def user_login(request, user_type):
             elif user_type == 'M':
                 user = ManagementUser.objects.get(username=username)
             else:
-                raise 
+                return Response(data, status=status.HTTP_400_BAD_REQUEST)
             
             data['email'] = user.email
             data['username'] = user.username
             data['user_id'] = user.id
         except Exception as e:
-            raise 
+            return Response(data, status=status.HTTP_400_BAD_REQUEST) 
 
         token = Token.objects.get_or_create(user=user)[0].key
         data["token"] = 'Token ' + token
 
         if not authenticate(username=username, password=password):
-            raise
+            return Response(data, status=status.HTTP_400_BAD_REQUEST)
 
         login(request, user)
 

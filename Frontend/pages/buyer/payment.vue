@@ -17,6 +17,13 @@
 <script>
 export default {
     layout: 'buyer',
+    beforeCreate() {
+        const user = this.$store.state.user
+        
+        if (!(user?.type == 'B')) {
+            this.$router.push('/')
+        }
+    },
     data() {
         return {
             payments: [1,2,3,4,5]
