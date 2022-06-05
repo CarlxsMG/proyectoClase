@@ -6,7 +6,8 @@
         "build": "nuxt build ",
         "generate": "nuxt generate",
         "start": "nuxt start",
-        "go": "nuxt build && nuxt start"
+        "go": "nuxt build && nuxt start",
+        "heroku-postbuild": "npm run build"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.6",

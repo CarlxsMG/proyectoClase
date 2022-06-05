@@ -52,6 +52,6 @@ export default {
 
   server: {
     host: process.env.NUXT_HOST || 'localhost',
-    port: process.env.NODE_ENV === 'production' ? 4000 : 80,
+    port: process.env.NODE_ENV === 'production' ? process.env.PORT : 80,
   },
 }
