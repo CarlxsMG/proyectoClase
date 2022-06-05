@@ -44,9 +44,6 @@ export default {
             required: true
         }
     },
-    mounted() {
-        console.log(this.trade)
-    },
     methods: {
         async rejectTrade() {
             let data = this.trade

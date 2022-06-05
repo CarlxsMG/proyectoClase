@@ -59,7 +59,7 @@ export default {
         else {
             req = await this.$axios.get(`users/buyer/${this.$store.state.auth.user.user_id}`)
         }
-        console.log(req)
+        
         this.result = req.data
     },
     data() {
