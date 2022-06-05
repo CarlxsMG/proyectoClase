@@ -44,6 +44,7 @@ export default {
             padding: 1rem 2rem
 
         &-list
-            display: grid
+            display: flex
+            flex-wrap: wrap
             gap: 1rem
 </style>

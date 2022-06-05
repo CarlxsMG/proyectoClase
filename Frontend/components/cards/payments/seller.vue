@@ -1,6 +1,5 @@
 <template>
   <section class="box">
-      <cards-vehicles class="box-card" />
       <section class="box-card-section" >
           <NuxtLink class="box-card-contract" to="/seller/contract">
             <span >
@@ -42,7 +41,7 @@ export default {
 
 
         @media screen and (min-width: 480px)
-            grid-template-columns: repeat(3, 1fr)
+            
             
             &-card
                 &-user

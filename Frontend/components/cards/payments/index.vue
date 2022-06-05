@@ -1,7 +1,11 @@
 <template>
   <section class="box">
-      <cards-vehicles class="box-card" />
       <div class="box-buttons">
+          <NuxtLink class="box-card-contract" to="/buyer/contract">
+            <span >
+                Contrato ID: {{contract.id}}
+            </span>      
+          </NuxtLink>
           <span :class="{
               'box-buttons-status-p': status=='P',
               'box-buttons-status-c': status=='C',
@@ -33,7 +37,10 @@ export default {
     },
     data() {
         return {
-            status: 'P'
+            status: 'P',
+            contract: {
+                id: 1
+            }
         }
     }
 
