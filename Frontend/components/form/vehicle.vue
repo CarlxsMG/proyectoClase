@@ -29,7 +29,7 @@
                 <textarea name="description" id="description" :value="result.description || ''"></textarea>
             </label>
             <input type="text" style="display:none;" name="owner" :value="user">
-            <input type="text" style="display:none;" name="status" :value="result.status || ''">
+            <input type="text" style="display:none;" name="status" :value="result.status || 'A'">
       </section>
       <basic-button 
         class="form-submit"
