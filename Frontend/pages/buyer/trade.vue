@@ -7,8 +7,10 @@
           Aún no tienes ninguna petición :(
       </p>
       <ul class="trade-list">
-          <li class="trade-list-item" v-for="trade in trades" :key="trade">
-              <cards-trades-buyer />
+          <li class="trade-list-item" v-for="trade in trades" :key="trade.id">
+              <cards-trades-buyer 
+                :status="trade.status"
+              />
           </li>
       </ul> 
   </main>
@@ -17,6 +19,15 @@
 <script>
 export default {
     layout: 'buyer',
+    async asyncData({$axios, store}) {
+        const req = await $axios.get('contract')
+        const data = req.data
+        const data_filtered = data.filter( el => el.buyer.toString() == store.state.auth.user.user_id)
+
+        return {
+            trades: data_filtered
+        }
+    },
     beforeCreate() {
         const type = this.$store.state.auth.type
 
@@ -24,11 +35,6 @@ export default {
             this.$router.push('/')
         }
     },
-    data() {
-        return {
-            trades: [1,2,3,4,5]
-        }
-    }
 }
 </script>
 
