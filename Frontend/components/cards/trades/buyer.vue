@@ -1,6 +1,6 @@
 <template>
   <section class="box">
-      <cards-vehicles class="box-card" />
+      <cards-vehicles class="box-card" :id="trade.vehicle" />
       <div class="box-buttons">
           <span class="box-buttons-status-p" v-if="status=='P'">
               Pendiente
@@ -18,6 +18,10 @@
 <script>
 export default {
     props: {
+        trade: {
+            type: Object,
+            required: true
+        },
         item: {
             type: Object,
             required: false,

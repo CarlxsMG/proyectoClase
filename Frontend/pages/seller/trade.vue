@@ -9,6 +9,7 @@
       <ul class="trade-list">
           <li class="trade-list-item" v-for="trade in trades" :key="trade.id">
               <cards-trades 
+                :trade="trade"
                 :status="trade.status"
               />
           </li>
