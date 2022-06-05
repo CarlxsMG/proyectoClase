@@ -7,8 +7,10 @@
           Aún no tienes ningun vehiculo :(
       </p>
       <ul class="vehicle-list">
-          <li class="vehicle-list-item">
-              <cards-vehicles />
+          <li class="vehicle-list-item" v-for="vehicle in vehicles" :key="vehicle.id">
+              <cards-vehicles 
+                :id="vehicle.id"
+              />
           </li>
       </ul>
   </main>
@@ -17,6 +19,16 @@
 <script>
 export default {
     layout: 'seller',
+    async asyncData({$axios, store}) {
+        const req = await $axios.get('vehicle')
+        const data = req.data
+        
+        const data_filtered = data.filter( el => el.owner.toString() == store.state.auth.user.user_id)
+
+        return {
+            vehicles: data_filtered
+        }
+    },
     beforeCreate() {
         const type = this.$store.state.auth.type
 
@@ -24,11 +36,6 @@ export default {
             this.$router.push('/')
         }
     },
-    data() {
-        return {
-            vehicles: []
-        }
-    }
 }
 </script>
 

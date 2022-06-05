@@ -43,7 +43,7 @@ export default {
         if(user.status == 200) {
           let user_data = user.data
           user_data['user_type'] = type
-
+          
           this.$store.commit('auth/user', user_data)
           
           if(type == 'S') {

@@ -12,8 +12,8 @@ export default {
     layout: 'seller',
     beforeCreate() {
         const type = this.$store.state.auth.type
-
-        if (!(type == 'S')) {
+        
+        if (!(type == 'S')) {   
             this.$router.push('/')
         }
     },
