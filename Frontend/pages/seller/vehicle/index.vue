@@ -23,10 +23,10 @@ export default {
         console.log(req)
     },
     beforeCreate() {
-        const type = this.$store.state.auth.type
-
+        const type = this.$store.auth.state.type
+        console.log(type)
         if (!(type == 'S')) {
-            this.$router.push('/')
+            // this.$router.push('/')
         }
     },
     data() {

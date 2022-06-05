@@ -42,8 +42,9 @@ export default {
         console.log(user.data)
         if(user.status == 200) {
           let user_data = user.data
+          user_data['user_type'] = type
+
           this.$store.commit('auth/user', user_data)
-          this.$store.commit('popup/open', false)
 
           if(type == 'S') {
             this.$router.push('/seller')
