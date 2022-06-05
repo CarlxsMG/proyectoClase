@@ -22,7 +22,7 @@ export default {
     async asyncData({$axios, store}) {
         const req = await $axios.get('contract')
         const data = req.data
-        const data_filtered = data.filter( el => el.seller.toString() == store.state.auth.user.user_id)
+        const data_filtered = data.filter( el => el.seller.toString() == store.state.auth.user.user_id && el.status != 'C')
 
         return {
             trades: data_filtered

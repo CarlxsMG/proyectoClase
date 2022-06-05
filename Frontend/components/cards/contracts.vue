@@ -17,8 +17,15 @@
           
       </section>
       <section class="box-card-status" >
-          <span v-if="status == 'P'">No pagado</span>
-          <span v-else>Pagado</span>
+          <span class="box-card-status-p" v-if="contract.status=='P'">
+              Pendiente
+          </span>
+          <span class="box-card-status-c" v-else-if="contract.status=='C'">
+              Completa
+          </span>
+          <span class="box-card-status-r" v-else>
+              Rechazada
+          </span>
       </section>
   </section>
 </template>
@@ -66,9 +73,20 @@ export default {
                 border-bottom: 1px solid #ccc
 
             &-status
+                display: grid
+
+            &-status-p, &-status-c, &-status-r
                 width: fit-content
                 height: fit-content
                 margin: auto
-                background: #e5d87f
                 padding: .5rem
+
+            &-status-p
+                background: #e5d87f
+                
+            &-status-c
+                background: #8ae57f
+
+            &-status-r
+                background: #cf2525
 </style>
