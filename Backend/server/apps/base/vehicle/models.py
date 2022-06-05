@@ -25,7 +25,7 @@ class Vehicle(models.Model):
     model = models.CharField(max_length=30, null=True, blank=True, verbose_name="Model")
     status = models.CharField(max_length=10, choices=_STATS, null=True, blank=True, verbose_name="Status")
     price = models.DecimalField(max_digits=10, decimal_places=2,null=True, blank=True, verbose_name="Price")
-    description = models.TextField(max_length=40, null=True, blank=True, verbose_name="Description")
+    description = models.TextField(null=True, blank=True, verbose_name="Description")
     plate = models.CharField(max_length=20, null=True, blank=True, verbose_name="Plate identifier of vehicle")
 
     owner = models.ForeignKey(SellerUser, on_delete=models.DO_NOTHING, verbose_name="Owner")

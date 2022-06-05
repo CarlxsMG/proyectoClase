@@ -6,6 +6,7 @@ from rest_framework.routers import DefaultRouter
 
 # Local imports
 from .viewsets import SellerViewSet, BuyerViewSet, ManagementViewSet
+from .views import user_login, user_logout
 
 
 # Creation of the router and register the viewsets
@@ -16,5 +17,6 @@ router.register(r'manager', ManagementViewSet, basename='user-manager-viewset')
 
 # List of urls
 urlpatterns = [
-    path('api/users/', include(router.urls), name='users-viewset')
+    path('api/users/', include(router.urls), name='users-viewset'),
+    path('api/login/<str:user_type>/', user_login, name="login")
 ]
