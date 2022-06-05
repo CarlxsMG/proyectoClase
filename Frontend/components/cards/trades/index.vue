@@ -2,11 +2,15 @@
   <section class="box">
       <cards-vehicles class="box-card" />
       <div class="box-buttons">
-          <span :class="{
-              'box-buttons-status-p': status=='P',
-              'box-buttons-status-c': status=='C',
-              'box-buttons-status-r': status=='R',
-          }">Pendiente</span>
+          <span class="box-buttons-status-p" v-if="status=='P'">
+              Pendiente
+          </span>
+          <span class="box-buttons-status-c" v-else-if="status=='C'">
+              Completa
+          </span>
+          <span class="box-buttons-status-r" v-else>
+              Rechazada
+          </span>
           <basic-button
             class="box-buttons-reject"
             :type="'button'"
@@ -28,13 +32,12 @@ export default {
             type: Object,
             required: false,
             default: () => ({})
+        },
+        status: {
+            type: String,
+            required: true
         }
     },
-    data() {
-        return {
-            status: 'P'
-        }
-    }
 
 }
 </script>
