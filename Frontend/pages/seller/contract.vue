@@ -25,7 +25,6 @@ export default {
         const data = req.data
         
         const data_filtered = data.filter( el => el.seller.toString() == store.state.auth.user.user_id)
-
         data_filtered.forEach( async function(e) {
             let reqs = await $axios.get(`users/buyer/${e.buyer}/`)
 
