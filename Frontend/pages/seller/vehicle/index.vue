@@ -3,7 +3,7 @@
       <hgroup class="vehicle-title">
           <h1>Tus vehiculos</h1>
       </hgroup>
-      <p v-if="!vehicles.lenght" class="vehicle-no">
+      <p v-if="!vehicles.length" class="vehicle-no">
           Aún no tienes ningun vehiculo :(
       </p>
       <ul class="vehicle-list">
