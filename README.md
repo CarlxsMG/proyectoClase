@@ -59,3 +59,7 @@
 - Filled arrow = Relationship
 
 ![](https://github.com/CarlxsMG/proyectoClase/blob/main/BaseDeDatos.drawio.png)
+
+# FlowChart Diagram
+
+![](https://github.com/CarlxsMG/proyectoClase/blob/main/FlowCharts.drawio.png)
